@@ -32,6 +32,9 @@ function myFunction() {
 function myFunction2() {
     window.open("addem.php");
 }
+function myFunction3() {
+    window.open("additemproduct.php");
+}
 
 
 </script>
@@ -40,7 +43,7 @@ function myFunction2() {
 
 
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:240px;font-weight:bold" id="mySidebar"><br>
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:259px;font-weight:bold" id="mySidebar"><br>
 <a  style="width:45%;" class="w3-round"></a>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
@@ -61,7 +64,7 @@ function myFunction2() {
   <input id="toggle2" type="checkbox">
   <label for="toggle2" class="animate">Menu<i class="fa fa-bars float-right"></i></label>
   <ul class="animate">
-    <li class="animate">Code<i class="fa fa-code float-right"></i></li>
+  <button onclick="myFunction3()"> <li class="animate">addproduct<i class="fa fa-code float-right"></i></li></button>
     <li class="animate">Zoom<i class="fa fa-arrows-alt float-right"></i></li>
     <li class="animate">Settings<i class="fa fa-cog float-right"></i></li>
   </ul>
