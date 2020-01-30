@@ -251,7 +251,7 @@ $('.image-upload-wrap').bind('dragover', function () {
     <card class="neumorphic" style="margin-top:-250px;height:100px;margin-left:5%;">
       <center><h2 style="font-family: 'Sriracha', cursive;">เพิ่มข้อมูลพนักงาน</h2></center>
     </card>
-    <card class="neumorphic" style="width:1000px;margin-left:5%;height:500px;margin-top:50px;" >
+    <card class="neumorphic" style="width:1000px;margin-left:5%;height:500px;margin-top:60px;" >
       <form autocomplete="off" class="form-horizontal">
         <div class="col-md-12">
           <div class="row">
