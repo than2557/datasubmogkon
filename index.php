@@ -37,6 +37,8 @@ function myFunction2() {
 </script>
 <body  class="w3-light-grey w3-content"  style="max-width:1600px;">
 
+
+
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:240px;font-weight:bold" id="mySidebar"><br>
 <a  style="width:45%;" class="w3-round"></a>
@@ -48,7 +50,7 @@ function myFunction2() {
   <label for="toggle1" class="animate">MENU<i class="fa fa-bars float-right"></i></label>
   <ul class="animate" >
    <button onclick="myFunction()"> <li class="animate">login<i class="fa fa-code float-right"></i></li></button>
-   <button onclick="myFunction2()"> <li class="animate">Zoom<i class="fa fa-arrows-alt float-right"></i></li></button>
+   <button onclick="myFunction2()"> <li class="animate">register<i class="fa fa-arrows-alt float-right"></i></li></button>
     <li class="animate">Settings<i class="fa fa-cog float-right"></i></li>
   </ul>
 </dropdown>
