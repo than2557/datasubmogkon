@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost","root","123456789","datasubmongkon");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-$conn->query("SET NAMES UTF8");
+require('connect.php');
 
 $z_id = isset($_POST['DISTRICT_CODE']) ? $_POST['DISTRICT_CODE'] : "";
 

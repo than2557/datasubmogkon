@@ -1,5 +1,5 @@
 <?php
-$conn = new mysqli("localhost","root","123456789","datasubmongkon");
+$conn = new mysqli("localhost","root","","datasubmogkon");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
