@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>TEST add type</title>
-	<?
-	require_once("connect.php");
+	<?php
+	require("connect.php");
 	
 $sql = "SELECT * FROM category order by id_category";  
 $result_category=$conn->query($sql); 

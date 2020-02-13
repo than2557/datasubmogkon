@@ -1,14 +1,13 @@
 
 <!DOCTYPE html> <html>
 <head>
+	 <link rel="icon" type="img/png" href="08bd1.png"/>
 	<title></title>
 </head>
 <body>
 <?php
 
 require_once("connect.php");
-
-
 
 
 $id_category=$_POST['id_category'];
@@ -19,7 +18,7 @@ $format_id=$_POST['format_id'];
 $unit_name=$_POST['unit_name'];
 $name_product=$_POST['name_product'];
 $price=$_POST['price'];
-$img_product=$_POST['img_product'];
+
 
 
 
@@ -35,9 +34,6 @@ else {
 $product_code=$_POST['id_category'].$_POST['type_id'].$_POST['brand_id'].$_POST['format_id'];	
 }
 
-
-
-
 if(move_uploaded_file($_FILES["img_product"]["tmp_name"],"upload/".$_FILES['img_product']["name"]))
 {
 	echo "copy/Upload Complete<br>";
@@ -45,11 +41,10 @@ if(move_uploaded_file($_FILES["img_product"]["tmp_name"],"upload/".$_FILES['img_
 
 
 
-	$sql = "INSERT INTO `product_stock`(`id_category`, `type_id`, `qty`, `brand_id`, `format_id`, `unit_name`, `name_product`, `price`, `img_product`, `product_code`) VALUES ('$id_category','$type_id','$qty','$brand_id','$format_id ','$unit_name','$name_product','$price','$picture','$product_code')";
-
+	$sql = "INSERT INTO `product_stock`(`product_code`, `name_product`, `type_id`, `format_id`, `unit_name`, `price`, `img_product`, `brand_id`, `qty`, `category_id`) VALUES ('$product_code','$name_product','$type_id','$format_id','$unit_name ','$price','$picture','$brand_id','$qty','$id_category')";
 	$Query =$conn->query($sql);
 	echo $sql;
-	echo $product_code;
+	
 }
 
 
@@ -57,4 +52,4 @@ if(move_uploaded_file($_FILES["img_product"]["tmp_name"],"upload/".$_FILES['img_
 
 ?>
 </body>
-<meta http-equiv="refresh" content="0;URL=additemproduct.php">
+<!-- <meta http-equiv="refresh" content="0;URL=additemproduct.php"> -->

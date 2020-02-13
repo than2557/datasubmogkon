@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>TEST add type</title>
-	<?
-	require_once("connect.php");
+	<?php
+	require("connect.php");
 	
 $sql = "SELECT * FROM product_type order by type_id";  
 $result_type=$conn->query($sql); 

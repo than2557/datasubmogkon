@@ -11,7 +11,7 @@ require_once("connect.php");
 
 
 
-$format_id=$_POST['id_category'];
+$id_category=$_POST['id_category'];
 $type_id=$_POST['id_category'].$_POST['type_id'];
 $name_type=$_POST['name_type'];
 

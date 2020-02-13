@@ -45,26 +45,12 @@ tr:nth-child(even) {
     <div class="row">
       <div class="col-sm-12 text-center">
 
+
 <?php
-  ini_set('display_errors', 1);
-  error_reporting(~0);
+require("connect.php");
+$sql = "SELECT * FROM `product_stock` WHERE product_code ORDER BY `product_code`";
+$result=$conn->query($sql);
 
-  $strKeyword = null;
-    
-
-  if(isset($_POST["states"]))
-  {
-    $strKeyword = $_POST["states"];
-  }
-    
-?>
-
-<?
-require_once("connect.php");
- 
-  $sql = "SELECT * FROM product_stock,brand_product,product_type WHERE product_stock.brand_id=brand_product.brand_id AND product_stock.type_id = product_type.type_id
- and name_product LIKE '%".$strKeyword."%'  ORDER BY product_id";
-  $result=$conn->query($sql);
 
 ?>
 
@@ -91,8 +77,8 @@ require_once("connect.php");
     <tr>
       <th>รหัสสินค้า</th>
       <th>ชื่อสินค้า</th>
-      <th>ชนิทสินค้า</th>
-      <th>แบรนด์สินค้า</th>
+   
+      
       <th>จำนวนสินค้า</th>
       <th>ราคา</th>
       <th>รูป</th>
@@ -102,37 +88,22 @@ require_once("connect.php");
   </thead>
   <tbody>
      <?php
-  while($row = $result->fetch_assoc()){
+  while($row =$result->fetch_assoc()){
     ?>
 
     <tr>
       <td><?=$row['product_code'];?></td>
       <td><?=$row['name_product'];?></td>
-      <td><?=$row['name_type'];?></td>
-      <td><?=$row['brand_name'];?></td>
-      <td><?
-        if( $row['qty']>3){
-
-           echo   $row['qty'];;
-        }
-    else{
-
-      echo   $row['qty'].""."สินค้าใกล้หมด";
-    }
-
-
-
-      ?></td>
         <td><?=$row['price'];?></td>
-      <td><img src="upload/<?=$row['img_product'];?>" height="100" width="100" style="border-radius: 100%;"></td>
+      <td><img src="<?=$row['img_product'];?>" height="100" width="100" style="border-radius: 100%;"></td>
       <td><a href="product_form_update.php?product_code=<?=$row['product_code'];?>"><img src="upload/Edit-512.png" style="width:50px;"></a></td>
       <td><a href="product_delete.php?product_code=<?=$row['product_code'];?>" onClick="return window.confirm('แน่ใจเหรอ?')"><img src="upload/47-512.png" style="width:50px;"></a></td>
     </tr>
 
-    <?php }?>  
+  
   </tbody>
 </table>
-
+<?php }?>  
 </div>
       </div>
     </div>

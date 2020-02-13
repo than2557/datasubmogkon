@@ -484,45 +484,55 @@ $result_province =$conn->query($sql2);
   'You clicked the button!',
   'success'
 )
-          var id_pername = document.getElementById("id_pername");
-          var name = document.getElementById("name");
-          var postname =  document.getElementById("postname");
-          var address =  document.getElementById("address");
-          var province_id =  document.getElementById("PROVINCE_ID");
-          var amphur_id =  document.getElementById("AMPHUR_ID");
-          var district_id =  document.getElementById("DISTRICT_ID");
-          var zipcode =  document.getElementById("zipcode");
-          var image =  document.getElementById("image");
-          var username = document.getElementById("username");
-          var password = document.getElementById("password");
-          $.ajax({
-                          type: 'POST',
-                          data: { 
-                            id_pername: id_pername, 
-                          name: name,
-                          postname:postname,
-                          addres:addres, 
-                          PROVINCE_ID :province_id ,
-                          AMPHUR_ID:amphur_id,
-                          DISTRICT_ID:district_id,
-                          zipcode:zipcode,
-                          image:image,
-                          username:username,
-                          password:password
-                           },
-                          url: 'insert_em.php',
-                          success: function(data) {
-                            Swal.fire(
-            'Good job!',
-          'You clicked the button!',
-         'success'
-                    )
-                          },
-              error: function(jqXHR, text, error){
+          var id_pername = document.getElementById('id_pername').innerHTML;
+          var name = document.getElementById('name').innerHTML;
+          var postname =  document.getElementById('postname').innerHTML;
+          var address =  document.getElementById('address').innerHTML;
+          var province_id =  document.getElementById('PROVINCE_ID').innerHTML;
+          var amphur_id =  document.getElementById('AMPHUR_ID').innerHTML;
+          var district_id =  document.getElementById('DISTRICT_ID').innerHTML;
+          var zipcode =  document.getElementById('zipcode').innerHTML;
+          var image =  document.getElementById('image').innerHTML;
+          var username = document.getElementById('username').innerHTML;
+          var password = document.getElementById('password').innerHTML;
+
+          
+
+
+
+          console.log(id_pername);
+        
+        
+
+
+        //   $.ajax({
+        //                   type: 'POST',
+        //                   data: { 
+        //                     id_pername: id_pername, 
+        //                   name: name,
+        //                   postname:postname,
+        //                   addres:addres, 
+        //                   PROVINCE_ID :province_id ,
+        //                   AMPHUR_ID:amphur_id,
+        //                   DISTRICT_ID:district_id,
+        //                   zipcode:zipcode,
+        //                   image:image,
+        //                   username:username,
+        //                   password:password
+        //                    },
+        //                   url: 'insert_em.php',
+        //                   success: function(data) {
+        //                     Swal.fire(
+        //     'Good job!',
+        //   'You clicked the button!',
+        //  'success'
+        //             )
+        //                   },
+        //       error: function(jqXHR, text, error){
               
-                    $('#results').html(error);           
-          }
-                      });
+        //             $('#results').html(error);           
+        //   }
+        //               });
 
 
 

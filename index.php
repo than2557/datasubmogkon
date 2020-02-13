@@ -20,11 +20,12 @@
   <link href="https://fonts.googleapis.com/css?family=Sriracha&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <link rel="stylesheet" href="index.css">
+  <style></style>
   <script>
 function myFunction() {
     window.open("login_form.php");
@@ -36,14 +37,19 @@ function myFunction3() {
     window.open("additemproduct.php");
 }
 
-
 </script>
-<body  class="w3-light-grey w3-content"  style="max-width:1600px;">
+
+<?php
 
 
+require('connect.php');
+$sql = "SELECT * FROM `product_stock` WHERE product_code ORDER BY `product_code`";
+$result=$conn->query($sql);
+// print_r($result);
+?>
+<body  class="w3-light-grey w3-content">
 
-<!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:259px;font-weight:bold" id="mySidebar"><br>
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:259px;font-weight:bold;margin-left: -14%;" id="mySidebar"><br>
 <a  style="width:45%;" class="w3-round"></a>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
   <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
@@ -73,7 +79,12 @@ function myFunction3() {
 
 </nav>
 
-<!-- Top menu on small screens -->
+
+
+
+
+
+
 <header class="w3-container w3-top w3-hide-large w3-white w3-xlarge w3-padding-16">
   <span class="w3-left w3-padding">SubMongKon</span>
 
@@ -85,13 +96,13 @@ function myFunction3() {
 
 
 
-
+<!-- 
 <center><div class="container">
 
       <div class="topindex">
  
     </div>
-</div></center>
+</div></center> -->
 
 
 
@@ -99,69 +110,42 @@ function myFunction3() {
 
 
 <!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<div class="contrainer">
-  <div class="wrapper">
-<div class="wrap">
-  
-  
-  
-  <header>   
-    <div class="logo" ><img src="08bd1.png" class="img"></div>
-    <nav>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </nav>
-  </header>
-  
-  
-  <section class="cards">
-   
-  <div class="cards">
+ <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+ 
 
+ <header>
+  <ul>
+    <i class='fa fa-shopping-cart'>
+      <span class='counter'></span>
+    </i>
+  </ul>
+</header>
 
-<div class="card">
-  <img class="card__image" src="08bd1.png" alt="wave" />
-  <div class="card-title">
-    <a href="#" class="toggle-info btn">
-      <span class="left"></span>
-      <span class="right"></span>
-    </a>
-    <h2>
-        Card title
-        <small>Image from unsplash.com</small>
-    </h2>
-  </div>
-  <div class="card-flap flap1">
-    <div class="card-description">
-      This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+<div class='row'>
+<?php
+  while($row = $result->fetch_assoc()){
+    ?>
+  
+  <div class='product--blue'>
+    <div class='product_inner'>
+      <img src='upload/<?=$row['img_product']?>' width='300'>
+      <p>Nike Air (Women)</p>
+      <p>Size 7</p>
+      <p>Price £199.99</p>
+      <button>Add to basket</button>
     </div>
-    <div class="card-flap flap2">
-      <div class="card-actions">
-        <a href="#" class="btn">Read more</a>
-      </div>
+    <div class='product_overlay'>
+      <h2>Added to basket</h2>
+      <i class='fa fa-check'></i>
     </div>
   </div>
-</div>
+  <?php }?>  
 </div>
 
-    
-  </section>
+ 
   
-  <section class="contentbox" style="margin-top: 300px;">
-    <div class="headline"></div>
-    <div class="text"></div>
-    <div class="text"></div>
-    <div class="text"></div>
-    <div class="button"></div>
-  </section>
+
   
-</div>
-</div>
   
-<footer></footer>
 </body>
 </html>
