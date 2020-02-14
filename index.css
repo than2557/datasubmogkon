@@ -104,11 +104,6 @@ $colors: #E74C3C,
     font-weight: 700;
 }
 
-html,
-body {
-    background: #EEE5E9;
-}
-
 header {
     width: 95%;
     display: -webkit-box;
@@ -146,7 +141,7 @@ header i:nth-of-type(2) {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
-    margin-left: 15%;
+    margin-left: 12%;
 }
 
 .product,
@@ -157,19 +152,19 @@ header i:nth-of-type(2) {
 .product--yellow,
 .product--pink {
     box-shadow: 1px 5px 15px #CCC;
-    width: 15em;
-    height: auto;
+    width: 200px;
+    height: 350px;
     border-radius: 3px;
     padding: 2em;
     margin: 1em;
     overflow: hidden;
     position: relative;
     -webkit-box-flex: 1;
-    flex: auto;
+    /* flex: auto; */
 }
 
 .product--blue {
-    background: linear-gradient(-45deg, #92DCE5 50%, rgba(255, 255, 255, 0.5) 50%);
+    background: linear-gradient(-45deg, #a9f5e9 50%, rgba(255, 255, 255, 0.5) 50%);
 }
 
 .product--orange {
@@ -199,7 +194,7 @@ header i:nth-of-type(2) {
 .product--green img,
 .product--yellow img,
 .product--pink img {
-    max-width: 100%;
+    max-width: 100px;
     height: auto !important;
     text-align: center;
 }
@@ -215,12 +210,12 @@ header i:nth-of-type(2) {
 }
 
 .product_inner p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
 }
 
 .product_inner button {
     border: 1px solid rgba(255, 255, 255, 0.5);
-    color: #FFF;
+    color: #000000;
     border-radius: 3px;
     padding: 1em 3em;
     margin: 1em 0 0 0;
@@ -238,7 +233,7 @@ header i:nth-of-type(2) {
 .product_inner button:before {
     font-family: FontAwesome;
     content: '\f07A';
-    color: #FFF;
+    color: #000000;
     position: absolute;
     font-size: 1.5em;
     margin: 0 -1.5em;

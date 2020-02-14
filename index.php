@@ -52,8 +52,7 @@ $result=$conn->query($sql);
 <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:259px;font-weight:bold;margin-left: -14%;" id="mySidebar"><br>
 <a  style="width:45%;" class="w3-round"></a>
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
 <dropdown>
   <input id="toggle1" type="checkbox" checked>
   <label for="toggle1" class="animate">MENU<i class="fa fa-bars float-right"></i></label>
@@ -129,13 +128,13 @@ $result=$conn->query($sql);
   <div class='product--blue'>
     <div class='product_inner'>
       <img src='upload/<?=$row['img_product']?>' width='300'>
-      <p>Nike Air (Women)</p>
-      <p>Size 7</p>
-      <p>Price £199.99</p>
-      <button>Add to basket</button>
+      <p><?=$row['name_product']?></p>
+      <p>ราคา:<?=$row['price']?></p>
+      
+      <button>ซื้อสินค้า</button>
     </div>
     <div class='product_overlay'>
-      <h2>Added to basket</h2>
+      <h2>เพิ่มในตะกร้า</h2>
       <i class='fa fa-check'></i>
     </div>
   </div>
