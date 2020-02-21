@@ -50,7 +50,7 @@
       }
     body {
       background-color: #aee0ee;
-      background: linear-gradient(135deg, #0398fc 5%, #ffccff 50%);
+      background: linear-gradient(135deg, #bbfcde 5%, #ffccff 50%);
     }
     h2{
       color:#000000;

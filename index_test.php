@@ -113,7 +113,7 @@ Swal.fire({
 
 <?php
 session_start();
-mysql_connect("localhost","root","123456789");
+mysql_connect("localhost","root","");
 mysql_select_db("datasubmongkon");
 $sql = "SELECT * FROM `product_stock`,brand_product WHERE product_stock.qty<4 And brand_product.brand_id = product_stock.brand_id
 

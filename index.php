@@ -121,25 +121,6 @@ $result=$conn->query($sql);
 </header>
 
 <div class='row'>
-<?php
-  while($row = $result->fetch_assoc()){
-    ?>
-  
-  <div class='product--blue'>
-    <div class='product_inner'>
-      <img src='upload/<?=$row['img_product']?>' width='300'>
-      <p><?=$row['name_product']?></p>
-      <p>ราคา:<?=$row['price']?></p>
-      
-      <button>ซื้อสินค้า</button>
-    </div>
-    <div class='product_overlay'>
-      <h2>เพิ่มในตะกร้า</h2>
-      <i class='fa fa-check'></i>
-    </div>
-  </div>
-  <?php }?>  
-</div>
 
  
   
